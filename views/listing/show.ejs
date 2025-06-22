@@ -1,0 +1,46 @@
+<% layout('boilerplate') %>
+
+<% block('styles') 
+{%>
+    <link rel="stylesheet" href="/css/show.css">
+<%}%>
+
+
+<main class="show-page">
+
+<% if (success4 && success4.length > 0) { %>
+  <div class="flash-message">
+    <button class="flash-close">&times;</button>
+    <%= success4 %>
+  </div>
+<% } %>
+
+<% if (success5 && success5.length > 0) { %>
+  <div class="flash-message">
+    <button class="flash-close">&times;</button>
+    <%= success5 %>
+  </div>
+<% } %>
+
+  <div class="container">
+    <div class="image-section">
+      <img src="<%= data.image.url %>" alt="<%= data.title %>">
+    </div>
+
+    <div class="info-section">
+      <h1 class="title"><%= data.title %></h1>
+      <p class="location"><%= data.location %>, <%= data.country %></p>
+      <p class="price">₹ <%= data.price %> / night</p>
+      <div class="description">
+        <h3>About this place</h3>
+        <p><%= data.description %></p>
+      </div>
+      <button class="book-btn">Book Now</button>
+    </div>
+  </div>
+
+  <%- include('../includes/review') %>
+
+</main>
+
+<script src="/js/show.js"></script>
