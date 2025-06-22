@@ -10,21 +10,6 @@ const database="mongodb://127.0.0.1:27017/Windbnb";
 const methodOverride=require('method-override');
 router.use(methodOverride('_method'));
 
-async function main() 
-{
-    await mongoose.connect(database);
-};
-
-// main()
-// .then((res) =>
-// {
-//     console.log("Connection established with database Windbnb");
-// })
-// .catch((err) =>
-// {
-//     console.log("Failed to establish connection with database WindBnb");
-// });
-
 function validateListing(req, res, next)
 {
     const {error}=listingSchema.validate(req.body);
@@ -45,7 +30,9 @@ router.get("/", wrapAsync( async (req, res, next) =>
     const success2=y[0];
     const z=req.flash("success3");
     const success3=z[0];
-    res.render("listing/home.ejs", {title: "Home | Windbnd", data, success, success2, success3});
+    const w=req.flash("success6");
+    const success6=w[0];
+    res.render("listing/home.ejs", {title: "Home | Windbnd", data, success, success2, success3, success6});
 }));
 
 router.get('/:id/show', wrapAsync(async (req, res) => 

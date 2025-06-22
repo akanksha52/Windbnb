@@ -1,6 +1,8 @@
 /* Header */
-body{
-  font-family: 'Trebuchet MS';
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 .header {
   position: fixed;
@@ -43,6 +45,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 
 .footer-icons{

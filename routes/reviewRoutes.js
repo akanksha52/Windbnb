@@ -11,11 +11,6 @@ const Listing=require("../models/listing.js");
 const methodOverride=require('method-override');
 router.use(methodOverride('_method'));
 
-async function main() 
-{
-    await mongoose.connect(database);
-};
-
 function validateReview(req, res, next)
 {
     const {error}=reviewSchema.validate(req.body);

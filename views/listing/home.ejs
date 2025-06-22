@@ -23,6 +23,12 @@
     <button class="flash-close">&times;</button>
   </div>
 <% } %>
+<% if (success6 && success6.length > 0) { %>
+  <div class="flash-message">
+    <%= success6 %>
+    <button class="flash-close">&times;</button>
+  </div>
+<% } %>
 
     <% for(let i of data) 
     {%>
